@@ -24,3 +24,7 @@ Message:
         recipient_list=[settings.EMAIL_HOST_USER],
         fail_silently=False,
     )
+# there is a bug in the website. 
+# after submiting a email to the page , if i refresh the page ,the message gets submitted again meaning i will get more same email if user refreshes the page. but after refreshing the page should be get back to normal. the message is being held somewhere.   
+#fixed the bug
+# currently after submitting the message it redirects to the top of page, 

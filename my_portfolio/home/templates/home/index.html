@@ -329,15 +329,12 @@
                             Send Message
                         </button>
                     </form>
-                    {% if success_message %}
-                    <div class="mt-4 p-4 bg-green-500/10 border border-green-500/30 rounded-lg text-green-400 text-sm">
-                        {{ success_message }}
+                    {% if messages %}
+                    {% for message in messages %}
+                    <div class="mt-4 p-4 border rounded-lg text-sm {% if message.tags == 'success' %}bg-green-500/10 border-green-500/30 text-green-400{% else %}bg-red-500/10 border-red-500/30 text-red-400{% endif %}">
+                        {{ message }}
                     </div>
-                    {% endif %}
-                    {% if error_message %}
-                    <div class="mt-4 p-4 bg-red-500/10 border border-red-500/30 rounded-lg text-red-400 text-sm">
-                        {{ error_message }}
-                    </div>
+                    {% endfor %}
                     {% endif %}
                 </div>
                 <div data-aos="fade-left">
