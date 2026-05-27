@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import ContactForm
 from .email_service import send_contact_email
+from .models import Certificate
 
 def home_view(request):
     form = ContactForm()
@@ -21,3 +22,8 @@ def home_view(request):
             return redirect('home')
 
     return render(request, 'home/index.html', {'form': form})
+
+
+def certificates_view(request):
+    certificates = Certificate.objects.all()
+    return render(request, 'home/certificates.html', {'certificates': certificates})

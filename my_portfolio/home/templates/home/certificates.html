@@ -1,0 +1,62 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+
+    <!-- Certificates Header -->
+    <section class="pt-32 pb-16 px-6">
+        <div class="max-w-6xl mx-auto text-center">
+            <h1 data-aos="fade-up" class="text-4xl md:text-5xl font-bold mb-4">
+                My <span class="text-accent-400">Certificates</span>
+            </h1>
+            <p data-aos="fade-up" data-aos-delay="100" class="text-dark-300 text-lg max-w-2xl mx-auto">
+                Professional certifications and achievements that validate my skills and knowledge.
+            </p>
+        </div>
+    </section>
+
+    <!-- Certificates Grid -->
+    <section class="pb-24 px-6">
+        <div class="max-w-6xl mx-auto">
+            {% if certificates %}
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                {% for cert in certificates %}
+                <div data-aos="fade-up" data-aos-delay="{% cycle '0' '100' '200' %}" class="group">
+                    <div class="rounded-xl overflow-hidden border border-dark-700 hover:border-accent-500/50 transition-all duration-300 h-full bg-dark-800 flex flex-col">
+                        <a href="{{ cert.image.url }}" target="_blank" class="block overflow-hidden">
+                            <img src="{{ cert.image.url }}"
+                                 alt="{{ cert.title }}"
+                                 class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500">
+                        </a>
+                        <div class="p-6 flex flex-col flex-1">
+                            <h3 class="text-lg font-semibold mb-1 group-hover:text-accent-400 transition-colors">{{ cert.title }}</h3>
+                            <p class="text-dark-400 text-sm mb-1">{{ cert.issuer }}</p>
+                            <p class="text-dark-500 text-xs mb-4">{{ cert.date|date:"F Y" }}</p>
+                            {% if cert.pdf %}
+                            <div class="mt-auto">
+                                <a href="{{ cert.pdf.url }}" target="_blank"
+                                   class="inline-flex items-center gap-2 text-sm text-accent-400 hover:text-accent-300 transition-colors">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                    </svg>
+                                    Download PDF
+                                </a>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class="text-center py-24">
+                <svg class="w-20 h-20 mx-auto text-dark-600 mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/>
+                </svg>
+                <h3 class="text-2xl font-semibold text-dark-400 mb-2">No Certificates Yet</h3>
+                <p class="text-dark-500">Certificates will appear here once added from the admin panel.</p>
+            </div>
+            {% endif %}
+        </div>
+    </section>
+
+{% endblock %}
