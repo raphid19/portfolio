@@ -2,10 +2,11 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import ContactForm
 from .email_service import send_contact_email
-from .models import Certificate
+from .models import Certificate, Experience
 
 def home_view(request):
     form = ContactForm()
+    experiences = Experience.objects.all()
 
     if request.method == 'POST':
         form = ContactForm(request.POST)
@@ -21,7 +22,7 @@ def home_view(request):
             messages.error(request, 'Please correct the errors below.')
             return redirect('home')
 
-    return render(request, 'home/index.html', {'form': form})
+    return render(request, 'home/index.html', {'form': form, 'experiences': experiences})
 
 
 def certificates_view(request):

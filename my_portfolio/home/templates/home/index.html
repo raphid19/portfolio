@@ -215,42 +215,19 @@
             <div class="relative">
                 <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-dark-700 transform md:-translate-x-1/2"></div>
                 <div class="space-y-12">
-                    <div data-aos="fade-left" data-aos-delay="0" class="relative pl-12 md:pl-0 md:ml-[50%] md:pr-12">
-                        <div class="absolute left-2.5 md:left-auto md:right-0 w-4 h-4 bg-accent-500 rounded-full border-4 border-dark-900 transform md:translate-x-1/2 top-1"></div>
+{% for exp in experiences %}
+                    <div data-aos="{% if forloop.counter|divisibleby:2 %}fade-right{% else %}fade-left{% endif %}" data-aos-delay="{{ forloop.counter0 }}00" class="relative pl-12 {% if forloop.counter|divisibleby:2 %}md:pl-12 md:mr-[50%]{% else %}md:pl-0 md:ml-[50%] md:pr-12{% endif %}">
+                        <div class="absolute left-2.5 md:left-auto md:right-0 w-4 h-4 bg-accent-500 rounded-full border-4 border-dark-900 transform {% if forloop.counter|divisibleby:2 %}-translate-x-1/2{% else %}md:translate-x-1/2{% endif %} top-1"></div>
                         <div class="p-6 rounded-xl bg-dark-800 border border-dark-700 hover:border-accent-500/30 transition-all duration-300">
-                            <span class="text-xs text-accent-400 font-semibold">2026 - Present</span>
-                            <h3 class="text-xl font-semibold mt-1">University Student</h3>
-                            <p class="text-dark-400 text-sm mb-2">[Company Name]</p>
-                            <p class="text-dark-300 text-sm">Describe your role, achievements, and technologies used. Lorem ipsum dolor sit amet.</p>
+                            <span class="text-xs text-accent-400 font-semibold">{{ exp.start_date }} - {{ exp.end_date|default:"Present" }}</span>
+                            <h3 class="text-xl font-semibold mt-1">{{ exp.title }}</h3>
+                            <p class="text-dark-400 text-sm mb-2">{{ exp.company }}</p>
+                            <p class="text-dark-300 text-sm">{{ exp.description }}</p>
                         </div>
                     </div>
-                    <div data-aos="fade-right" data-aos-delay="100" class="relative pl-12 md:pl-12 md:mr-[50%]">
-                        <div class="absolute left-2.5 md:left-auto md:right-0 w-4 h-4 bg-accent-500 rounded-full border-4 border-dark-900 transform -translate-x-1/2 top-1"></div>
-                        <div class="p-6 rounded-xl bg-dark-800 border border-dark-700 hover:border-accent-500/30 transition-all duration-300">
-                            <span class="text-xs text-accent-400 font-semibold">202_ - 202_</span>
-                            <h3 class="text-xl font-semibold mt-1">[position]</h3>
-                            <p class="text-dark-400 text-sm mb-2">[Company Name]</p>
-                            <p class="text-dark-300 text-sm">Describe your role, achievements, and technologies used. Lorem ipsum dolor sit amet.</p>
-                        </div>
-                    </div>
-                    <div data-aos="fade-left" data-aos-delay="200" class="relative pl-12 md:pl-0 md:ml-[50%] md:pr-12">
-                        <div class="absolute left-2.5 md:left-auto md:right-0 w-4 h-4 bg-accent-500 rounded-full border-4 border-dark-900 transform md:translate-x-1/2 top-1"></div>
-                        <div class="p-6 rounded-xl bg-dark-800 border border-dark-700 hover:border-accent-500/30 transition-all duration-300">
-                            <span class="text-xs text-accent-400 font-semibold">202_ - 202_</span>
-                            <h3 class="text-xl font-semibold mt-1">[position]</h3>
-                            <p class="text-dark-400 text-sm mb-2">[Company Name]</p>
-                            <p class="text-dark-300 text-sm">Describe your role, achievements, and technologies used. Lorem ipsum dolor sit amet.</p>
-                        </div>
-                    </div>
-                    <div data-aos="fade-right" data-aos-delay="300" class="relative pl-12 md:pl-12 md:mr-[50%]">
-                        <div class="absolute left-2.5 md:left-auto md:right-0 w-4 h-4 bg-accent-500 rounded-full border-4 border-dark-900 transform -translate-x-1/2 top-1"></div>
-                        <div class="p-6 rounded-xl bg-dark-800 border border-dark-700 hover:border-accent-500/30 transition-all duration-300">
-                            <span class="text-xs text-accent-400 font-semibold">2022 - 2026</span>
-                            <h3 class="text-xl font-semibold mt-1">Computer Science & Engineering Degree</h3>
-                            <p class="text-dark-400 text-sm mb-2">Bangladesh Army International University of Science and Technology</p>
-                            <p class="text-dark-300 text-sm">B.Sc. in Computer Science & Engineering. Relevant coursework and activities.</p>
-                        </div>
-                    </div>
+{% empty %}
+                    <p class="text-dark-400 text-center col-span-full">No experience entries yet. Add some in the admin panel.</p>
+{% endfor %}
                 </div>
             </div>
         </div>
