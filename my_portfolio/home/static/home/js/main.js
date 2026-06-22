@@ -1,14 +1,27 @@
 document.addEventListener('DOMContentLoaded', function () {
 
   // ============================
-  // AOS (Animate on Scroll)
+  // Scroll Reveal Animations
   // ============================
-  AOS.init({
-    duration: 800,
-    once: true,
-    offset: 100,
-    easing: 'ease-out-cubic',
-  });
+  (function scrollReveal() {
+    var reveals = document.querySelectorAll('.reveal');
+    if (!reveals.length) return;
+
+    function checkReveals() {
+      var windowHeight = window.innerHeight;
+      var revealPoint = 100;
+
+      reveals.forEach(function (el) {
+        var top = el.getBoundingClientRect().top;
+        if (top < windowHeight - revealPoint) {
+          el.classList.add('reveal--visible');
+        }
+      });
+    }
+
+    checkReveals();
+    window.addEventListener('scroll', checkReveals);
+  })();
 
   // ============================
   // Hero Particles
@@ -75,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Skill Bars Animation
   // ============================
   (function animateSkillBars() {
-    var bars = document.querySelectorAll('.skill-bar');
+    var bars = document.querySelectorAll('.skill-bar__fill');
     if (!bars.length) return;
 
     var observer = new IntersectionObserver(function (entries) {
@@ -84,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
           var bar = entry.target;
           var width = bar.getAttribute('data-width');
           bar.style.setProperty('--target-width', width);
-          bar.classList.add('animate');
+          bar.classList.add('skill-bar__fill--animate');
           observer.unobserve(bar);
         }
       });
@@ -103,9 +116,9 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('scroll', function () {
       var currentScroll = window.pageYOffset;
       if (currentScroll > 50) {
-        navbar.classList.add('bg-dark-900/95', 'shadow-lg', 'shadow-black/20');
+        navbar.classList.add('navbar--scrolled');
       } else {
-        navbar.classList.remove('bg-dark-900/95', 'shadow-lg', 'shadow-black/20');
+        navbar.classList.remove('navbar--scrolled');
       }
       lastScroll = currentScroll;
     });
@@ -120,12 +133,12 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!btn || !menu) return;
 
     btn.addEventListener('click', function () {
-      menu.classList.toggle('hidden');
+      menu.classList.toggle('navbar__mobile-menu--open');
     });
 
     menu.querySelectorAll('a').forEach(function (link) {
       link.addEventListener('click', function () {
-        menu.classList.add('hidden');
+        menu.classList.remove('navbar__mobile-menu--open');
       });
     });
   })();
