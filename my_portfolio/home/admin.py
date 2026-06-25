@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.utils.html import format_html
-from .models import Certificate, Experience
+from .models import Certificate, Experience, Resume
 
 @admin.register(Certificate)
 class CertificateAdmin(admin.ModelAdmin):
@@ -25,3 +25,17 @@ class ExperienceAdmin(admin.ModelAdmin):
     list_display_links = ['title']
     search_fields = ['title', 'company']
     ordering = ['order']
+
+
+@admin.register(Resume)
+class ResumeAdmin(admin.ModelAdmin):
+    list_display = ['title', 'is_active', 'updated_at', 'file_link']
+    list_editable = ['is_active']
+    list_display_links = ['title']
+    search_fields = ['title']
+
+    def file_link(self, obj):
+        if obj.file:
+            return format_html('<a href="{}" target="_blank">Download</a>', obj.file.url)
+        return "-"
+    file_link.short_description = 'File'

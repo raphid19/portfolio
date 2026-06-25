@@ -28,3 +28,22 @@ class Experience(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Resume(models.Model):
+    title = models.CharField(max_length=200)
+    file = models.FileField(upload_to='resumes/')
+    description = models.TextField(blank=True)
+    is_active = models.BooleanField(default=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ['-updated_at']
+
+    def save(self, *args, **kwargs):
+        if self.is_active:
+            Resume.objects.filter(is_active=True).exclude(pk=self.pk).update(is_active=False)
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return self.title

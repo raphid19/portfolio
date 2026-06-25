@@ -235,21 +235,61 @@
 
     <!-- Resume Section -->
     <section id="resume" class="section">
-        <div class="container container--narrow resume__content">
-            <h2 class="resume__title reveal reveal--fade">
-                Want to know <span class="resume__highlight">more?</span>
+        <div class="container container--narrow">
+            <h2 class="section__title section__header reveal reveal--fade">
+                <span class="section__title--highlight">Resume</span>
             </h2>
-            <p class="resume__description reveal reveal--fade">
-                Download my resume for a complete overview of my experience, skills, and qualifications.
+            <p class="resume__subtitle reveal reveal--fade">
+                Download my latest professional resume.
             </p>
-            <div class="reveal reveal--fade">
-                <a href="#" class="btn btn--download">
-                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+
+{% if active_resume %}
+            <div class="resume__card reveal reveal--zoom">
+                <div class="resume__card-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v4a2 2 0 002 2h4"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 13h6M9 17h6"/>
                     </svg>
-                    Download Resume (PDF)
-                </a>
+                </div>
+                <h3 class="resume__card-title">{{ active_resume.title }}</h3>
+                {% if active_resume.description %}
+                <p class="resume__card-desc">{{ active_resume.description }}</p>
+                {% endif %}
+                <p class="resume__card-meta">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    Updated {{ active_resume.updated_at|date:"F j, Y" }}
+                </p>
+                <div class="resume__actions">
+                    <a href="{{ active_resume.file.url }}" target="_blank" rel="noopener noreferrer" class="resume__btn resume__btn--view">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                        </svg>
+                        View Resume
+                    </a>
+                    <a href="{{ active_resume.file.url }}" download class="resume__btn resume__btn--download">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        </svg>
+                        Download Resume
+                    </a>
+                </div>
             </div>
+{% else %}
+            <div class="resume__empty reveal reveal--zoom">
+                <div class="resume__empty-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v4a2 2 0 002 2h4"/>
+                    </svg>
+                </div>
+                <p class="resume__empty-title">Resume will be available soon.</p>
+                <p class="resume__empty-text">Check back later for an updated version.</p>
+            </div>
+{% endif %}
         </div>
     </section>
 
