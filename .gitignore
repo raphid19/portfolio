@@ -6,8 +6,11 @@ media/
 staticfiles/
 *.mo
 
+#oponcode
+.oponcode/skils/frontend-design.md
 # Environment
 .env
+venv/
 
 # Node
 node_modules/
