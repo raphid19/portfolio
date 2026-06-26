@@ -1,4 +1,58 @@
 from django.db import models
+from django.utils.text import slugify
+from imagekit.models import ImageSpecField
+from imagekit.processors import ResizeToFill
+
+class Technology(models.Model):
+    name = models.CharField(max_length=100, unique=True)
+    slug = models.SlugField(max_length=100, unique=True, blank=True)
+
+    class Meta:
+        ordering = ['name']
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.name)
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return self.name
+
+
+class Project(models.Model):
+    title = models.CharField(max_length=200)
+    slug = models.SlugField(max_length=200, unique=True, blank=True)
+    short_description = models.TextField()
+    full_description = models.TextField(blank=True)
+    project_url = models.URLField(blank=True, verbose_name="Project URL")
+    github_url = models.URLField(blank=True, verbose_name="GitHub URL")
+    technologies = models.ManyToManyField(Technology, blank=True)
+    cover_image = models.ImageField(upload_to='projects/covers/', blank=True)
+    cover_thumbnail = ImageSpecField(
+        source='cover_image',
+        processors=[ResizeToFill(400, 250)],
+        format='WEBP',
+        options={'quality': 80},
+    )
+    is_featured = models.BooleanField(default=False, help_text="Show on the homepage featured section")
+    is_published = models.BooleanField(default=True, help_text="Only published projects appear on the live site")
+    order = models.IntegerField(default=0, help_text="Lower numbers appear first")
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ['order', '-created_at']
+        verbose_name = 'Project'
+        verbose_name_plural = 'Projects'
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return self.title
+
 
 class Certificate(models.Model):
     title = models.CharField(max_length=200)

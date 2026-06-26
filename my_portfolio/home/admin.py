@@ -1,6 +1,54 @@
 from django.contrib import admin
 from django.utils.html import format_html
-from .models import Certificate, Education, Experience, Resume
+from .models import Certificate, Education, Experience, Project, Resume, Technology
+
+
+@admin.register(Technology)
+class TechnologyAdmin(admin.ModelAdmin):
+    list_display = ['name', 'slug']
+    prepopulated_fields = {'slug': ('name',)}
+    search_fields = ['name']
+
+
+@admin.register(Project)
+class ProjectAdmin(admin.ModelAdmin):
+    list_display = ['order', 'title', 'is_featured', 'is_published', 'created_at', 'cover_preview']
+    list_editable = ['is_featured', 'is_published', 'order']
+    list_display_links = ['title']
+    list_filter = ['is_featured', 'is_published', 'created_at', 'technologies']
+    search_fields = ['title', 'short_description']
+    ordering = ['order', '-created_at']
+    prepopulated_fields = {'slug': ('title',)}
+    readonly_fields = ['created_at', 'updated_at', 'cover_preview']
+    filter_horizontal = ['technologies']
+    fieldsets = [
+        ('Basic Information', {
+            'fields': ['title', 'slug', 'short_description', 'full_description'],
+        }),
+        ('Media', {
+            'fields': ['cover_image', 'cover_preview'],
+        }),
+        ('Links', {
+            'fields': ['project_url', 'github_url'],
+        }),
+        ('Classification', {
+            'fields': ['technologies', 'is_featured', 'is_published', 'order'],
+        }),
+        ('Timestamps', {
+            'fields': ['created_at', 'updated_at'],
+            'classes': ['collapse'],
+        }),
+    ]
+
+    def cover_preview(self, obj):
+        if obj.cover_image:
+            return format_html(
+                '<img src="{}" width="120" height="75" style="object-fit:cover; border-radius:4px;" />',
+                obj.cover_image.url,
+            )
+        return "No image"
+    cover_preview.short_description = 'Cover Preview'
+
 
 @admin.register(Certificate)
 class CertificateAdmin(admin.ModelAdmin):
