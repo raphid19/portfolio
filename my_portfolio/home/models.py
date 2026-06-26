@@ -30,6 +30,22 @@ class Experience(models.Model):
         return self.title
 
 
+class Education(models.Model):
+    institution = models.CharField(max_length=200)
+    degree = models.CharField(max_length=200)
+    field_of_study = models.CharField(max_length=200, blank=True)
+    description = models.TextField(blank=True)
+    start_date = models.CharField(max_length=50)
+    end_date = models.CharField(max_length=50, blank=True, null=True)
+    order = models.IntegerField(default=0)
+
+    class Meta:
+        ordering = ['order']
+
+    def __str__(self):
+        return f"{self.degree} at {self.institution}"
+
+
 class Resume(models.Model):
     title = models.CharField(max_length=200)
     file = models.FileField(upload_to='resumes/')

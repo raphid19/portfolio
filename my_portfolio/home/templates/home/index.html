@@ -233,6 +233,42 @@
         </div>
     </section>
 
+    <!-- Education Section -->
+    <section id="education" class="section section--dark">
+        <div class="container">
+            <h2 class="section__title section__header reveal reveal--fade">
+                My <span class="section__title--highlight">Education</span>
+            </h2>
+            <div class="education__grid">
+{% for edu in educations %}
+                <div class="education__card-wrapper reveal reveal--fade">
+                    <div class="education__card">
+                        <div class="education__icon">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l9-5-9-5-9 5 9 5z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l9-5-9-5-9 5 9 5z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14v7"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 12v4l8 4 8-4v-4"/>
+                            </svg>
+                        </div>
+                        <span class="education__date">{{ edu.start_date }} - {{ edu.end_date|default:"Present" }}</span>
+                        <h3 class="education__degree">{{ edu.degree }}</h3>
+                        {% if edu.field_of_study %}
+                        <p class="education__field">{{ edu.field_of_study }}</p>
+                        {% endif %}
+                        <p class="education__institution">{{ edu.institution }}</p>
+                        {% if edu.description %}
+                        <p class="education__description">{{ edu.description }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+{% empty %}
+                <p class="empty-state__text" style="grid-column: 1 / -1; color: var(--dark-400); text-align: center;">No education entries yet. Add some in the admin panel.</p>
+{% endfor %}
+            </div>
+        </div>
+    </section>
+
     <!-- Resume Section -->
     <section id="resume" class="section">
         <div class="container container--narrow">

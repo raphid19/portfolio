@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.utils.html import format_html
-from .models import Certificate, Experience, Resume
+from .models import Certificate, Education, Experience, Resume
 
 @admin.register(Certificate)
 class CertificateAdmin(admin.ModelAdmin):
@@ -24,6 +24,15 @@ class ExperienceAdmin(admin.ModelAdmin):
     list_editable = ['order']
     list_display_links = ['title']
     search_fields = ['title', 'company']
+    ordering = ['order']
+
+
+@admin.register(Education)
+class EducationAdmin(admin.ModelAdmin):
+    list_display = ['order', 'degree', 'institution', 'start_date', 'end_date']
+    list_editable = ['order']
+    list_display_links = ['degree']
+    search_fields = ['degree', 'institution', 'field_of_study']
     ordering = ['order']
 
 
