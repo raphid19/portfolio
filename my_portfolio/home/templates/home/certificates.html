@@ -2,13 +2,16 @@
 
 {% block content %}
 
-    <!-- Certificates Header -->
-    <section class="cert__header">
-        <div class="container text-center">
-            <h1 class="cert__title reveal reveal--fade">
-                My <span class="section__title--highlight">Certificates</span>
-            </h1>
-            <p class="cert__subtitle reveal reveal--fade">
+    <!-- Certificates Terminal Header -->
+    <section class="cert__terminal-header">
+        <div class="container">
+            <div class="terminal-header reveal reveal--fade">
+                <span class="terminal-header__prompt">$</span>
+                <span class="terminal-header__path">certificates</span>
+                <span class="terminal-header__filename">ls -la ~/certificates</span>
+                <span class="terminal-header__line"></span>
+            </div>
+            <p class="reveal reveal--fade" style="font-size:0.8125rem;color:var(--terminal-dim);max-width:600px;">
                 Professional certifications and achievements that validate my skills and knowledge.
             </p>
         </div>
@@ -28,19 +31,18 @@
                                  class="cert-card__image">
                         </a>
                         <div class="cert-card__body">
+                            <div class="cert-card__prompt">❯ cat cert_{{ forloop.counter }}.info</div>
                             <h3 class="cert-card__title">{{ cert.title }}</h3>
                             <p class="cert-card__issuer">{{ cert.issuer }}</p>
                             <p class="cert-card__date">{{ cert.date|date:"F Y" }}</p>
                             {% if cert.pdf %}
-                            <div>
-                                <a href="{{ cert.pdf.url }}" target="_blank"
-                                   class="cert-card__download">
-                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-                                    </svg>
-                                    Download PDF
-                                </a>
-                            </div>
+                            <a href="{{ cert.pdf.url }}" target="_blank"
+                               class="cert-card__download">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                </svg>
+                                Download PDF
+                            </a>
                             {% endif %}
                         </div>
                     </div>

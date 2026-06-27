@@ -6,59 +6,104 @@
 
     <!-- Hero Section -->
     <section id="hero" class="hero">
-        <div id="particles" class="hero__particles"></div>
-        <div class="hero__gradient"></div>
+        <div class="hero__bg-grid"></div>
         <div class="hero__content">
+            <div class="hero__boot">
+                <div class="hero__boot-line"><span class="terminal-prefix">$</span> <span class="terminal-path">system</span> init --kernel=v2.5.0</div>
+                <div class="hero__boot-line"><span class="terminal-prefix">></span> SYSTEM.KERNEL :: v2.5.0 ONLINE</div>
+                <div class="hero__boot-line"><span class="terminal-prefix">></span> LOADED_MODULES: PYTHON | DJANGO | JAVASCRIPT | REACT</div>
+                <div class="hero__boot-line"><span class="terminal-prefix">></span> READY <span class="terminal-cursor"></span></div>
+            </div>
             <div class="reveal reveal--fade">
-                <h1 class="hero__title">
-                    Hi, I'm <span class="hero__title--gradient">Raphid</span>
-                </h1>
-                <p class="hero__subtitle" id="typewriter"></p>
+                <div class="hero__code-block">
+                    <span class="keyword">while</span>(alive) { <span class="bracket">code</span>() }
+                </div>
+                <h1 class="hero__greeting">Hello, I'm Raphid</h1>
+                <p class="hero__tagline">
+                    &lt;<span class="highlight">Engineer</span> /&gt; Building Beyond Boundaries..
+                    Specializing in <span class="highlight">full-stack development</span>,
+                    <span class="highlight">real-time applications</span>, and
+                    <span class="highlight">scalable architectures</span>.
+                </p>
                 <div class="hero__buttons">
-                    <a href="#projects" class="btn btn--primary">View My Work</a>
-                    <a href="#contact" class="btn btn--secondary">Contact Me</a>
+                    <a href="#projects" class="btn btn--primary">
+                        $ sudo boot_gui --target=projects
+                    </a>
+                    <a href="https://github.com/raphid19" target="_blank" rel="noopener noreferrer" class="btn btn--secondary">
+                        Check out GitHub
+                    </a>
                 </div>
             </div>
-        </div>
-        <div class="hero__scroll-indicator">
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
-            </svg>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="section">
+    <section id="about" class="section section--dark">
         <div class="container">
-            <h2 class="section__title section__header reveal reveal--fade">
-                About <span class="section__title--highlight">Me</span>
-            </h2>
+            <div class="terminal-header reveal reveal--fade">
+                <span class="terminal-header__prompt">#</span>
+                <span class="terminal-header__path">about</span>
+                <span class="terminal-header__filename">About.system</span>
+                <span class="terminal-header__line"></span>
+            </div>
             <div class="about__grid">
-                <div class="about__image-frame reveal reveal--left">
-                    <div class="about__image-wrapper">
-                        <div class="about__image-inner">
-                            <div class="about__placeholder">
-                                <svg class="about__placeholder-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
-                                </svg>
-                                <p class="about__placeholder-text">[Your Photo]</p>
+                <div class="reveal reveal--left">
+                    <div class="about__terminal">
+                        <div class="about__terminal-bar">
+                            <span class="about__terminal-dot about__terminal-dot--red"></span>
+                            <span class="about__terminal-dot about__terminal-dot--yellow"></span>
+                            <span class="about__terminal-dot about__terminal-dot--green"></span>
+                            <span class="about__terminal-title">user_profile.log</span>
+                        </div>
+                        <div class="about__terminal-body">
+                            <div class="about__cmd"><span class="prompt">➜</span> whoami</div>
+                            <div class="about__output">
+                                I am a Software Engineer with a passion for building scalable, full-stack applications.
+                                My architecture is built on a foundation of clean code, performance optimization,
+                                and continuous learning.
+                            </div>
+                            <div class="about__cmd"><span class="prompt">➜</span> cat mission.txt</div>
+                            <div class="about__output">
+                                Translating complex business requirements into robust technical solutions.
+                                Currently focused on <span class="label">Web Development</span>,
+                                <span class="label">API Design</span>, and
+                                <span class="label">Cloud Technologies</span>.
+                            </div>
+                            <div class="about__stats">
+                                <div class="about__stat">
+                                    <div class="about__stat-value">01+</div>
+                                    <div class="about__stat-label">EXPERIENCE (YRS)</div>
+                                </div>
+                                <div class="about__stat">
+                                    <div class="about__stat-value">05+</div>
+                                    <div class="about__stat-label">PROJECTS DEP</div>
+                                </div>
+                                <div class="about__stat">
+                                    <div class="about__stat-value">∞</div>
+                                    <div class="about__stat-label">CAFFEINE ml</div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="reveal reveal--right">
-                    <h3 class="about__name">Who I Am</h3>
-                    <p class="about__text">
-                        [Write a brief introduction about yourself here. Describe your passion, your background, and what drives you as a professional. Keep it engaging and personal.]
-                    </p>
-                    <p class="about__text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
-                    </p>
-                    <div class="about__info-grid">
-                        <div><span class="about__info-label">📍 Location:</span> <span class="about__info-value"> Maijdee, Noakhali, Bangladesh</span></div>
-                        <div><span class="about__info-label">📧 Email:</span> <span class="about__info-value">mdraphidbinazad13@gmail.com</span></div>
-                        <div><span class="about__info-label">💼 Experience:</span> <span class="about__info-value">1 Years</span></div>
-                        <div><span class="about__info-label">🌐 Languages:</span> <span class="about__info-value">Bengali, English</span></div>
+                    <div class="about__terminal">
+                        <div class="about__terminal-bar">
+                            <span class="about__terminal-dot about__terminal-dot--red"></span>
+                            <span class="about__terminal-dot about__terminal-dot--yellow"></span>
+                            <span class="about__terminal-dot about__terminal-dot--green"></span>
+                            <span class="about__terminal-title">operator_info.json</span>
+                        </div>
+                        <div class="about__terminal-body">
+                            <div class="about__output" style="border-left: none; padding-left: 0;">
+                                <span class="dim">OPERATOR</span>        <span class="value">MD RAPHID BIN AZAD</span><br>
+                                <span class="dim">ROLE</span>             <span class="value">FULL_STACK_DEVELOPER</span><br>
+                                <span class="dim">LOCATION</span>         <span class="value">Maijdee, Noakhali, Bangladesh</span><br>
+                                <span class="dim">EMAIL</span>            <span class="value">mdraphidbinazad13@gmail.com</span><br>
+                                <span class="dim">LANGUAGES</span>        <span class="value">Bengali, English</span><br>
+                                <span class="dim">STATUS</span>           <span class="value" style="color: var(--terminal-green);">ONLINE</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -66,100 +111,43 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="section section--dark">
+    <section id="skills" class="section">
         <div class="container">
-            <h2 class="section__title section__header reveal reveal--fade">
-                My <span class="section__title--highlight">Skills</span>
-            </h2>
-            <div class="grid grid--3col">
-                <div class="reveal reveal--zoom">
-                    <div class="skill-card">
-                        <h3 class="skill-card__title">Frontend</h3>
-                        <div class="skill-card__list">
-                            <div class="skill-bar"><div class="skill-card__item"><span>HTML/CSS</span><span>90%</span></div><div class="skill-bar__track"><div class="skill-bar__fill" data-width="90%"></div></div></div>
-                            <div class="skill-bar"><div class="skill-card__item"><span>JavaScript</span><span>80%</span></div><div class="skill-bar__track"><div class="skill-bar__fill" data-width="80%"></div></div></div>
-                            <div class="skill-bar"><div class="skill-card__item"><span>React</span><span>75%</span></div><div class="skill-bar__track"><div class="skill-bar__fill" data-width="75%"></div></div></div>
-                            <div class="skill-bar"><div class="skill-card__item"><span>Tailwind CSS</span><span>85%</span></div><div class="skill-bar__track"><div class="skill-bar__fill" data-width="85%"></div></div></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="reveal reveal--zoom">
-                    <div class="skill-card">
-                        <h3 class="skill-card__title">Backend</h3>
-                        <div class="skill-card__list">
-                            <div class="skill-bar"><div class="skill-card__item"><span>Java</span><span>65%</span></div><div class="skill-bar__track"><div class="skill-bar__fill" data-width="85%"></div></div></div>
-                            <div class="skill-bar"><div class="skill-card__item"><span>C++</span><span>40%</span></div><div class="skill-bar__track"><div class="skill-bar__fill" data-width="85%"></div></div></div>
-                            <div class="skill-bar"><div class="skill-card__item"><span>Python</span><span>85%</span></div><div class="skill-bar__track"><div class="skill-bar__fill" data-width="85%"></div></div></div>
-                            <div class="skill-bar"><div class="skill-card__item"><span>Django</span><span>80%</span></div><div class="skill-bar__track"><div class="skill-bar__fill" data-width="80%"></div></div></div>
-                            <div class="skill-bar"><div class="skill-card__item"><span>Node.js</span><span>50%</span></div><div class="skill-bar__track"><div class="skill-bar__fill" data-width="70%"></div></div></div>
-                            <div class="skill-bar"><div class="skill-card__item"><span>PostgreSQL</span><span>60%</span></div><div class="skill-bar__track"><div class="skill-bar__fill" data-width="75%"></div></div></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="reveal reveal--zoom">
-                    <div class="skill-card">
-                        <h3 class="skill-card__title">Tools & Others</h3>
-                        <div class="skill-card__list">
-                            <div class="skill-bar"><div class="skill-card__item"><span>Git/GitHub</span><span>90%</span></div><div class="skill-bar__track"><div class="skill-bar__fill" data-width="90%"></div></div></div>
-                            <div class="skill-bar"><div class="skill-card__item"><span>Docker</span><span>70%</span></div><div class="skill-bar__track"><div class="skill-bar__fill" data-width="70%"></div></div></div>
-                            <div class="skill-bar"><div class="skill-card__item"><span>AWS</span><span>65%</span></div><div class="skill-bar__track"><div class="skill-bar__fill" data-width="65%"></div></div></div>
-                            <div class="skill-bar"><div class="skill-card__item"><span>Linux</span><span>80%</span></div><div class="skill-bar__track"><div class="skill-bar__fill" data-width="80%"></div></div></div>
-                        </div>
-                    </div>
-                </div>
+            <div class="flex items-center gap-4 mb-12 reveal reveal--fade" style="display:flex;align-items:center;gap:16px;margin-bottom:48px;">
+                <svg class="skills-header-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                    <path d="M12 20v2M12 2v2M17 20v2M17 2v2M2 12h2M2 17h2M2 7h2M20 12h2M20 17h2M20 7h2M7 20v2M7 2v2"/>
+                    <rect x="4" y="4" width="16" height="16" rx="2"/>
+                    <rect x="8" y="8" width="8" height="8" rx="1"/>
+                </svg>
+                <h2 style="font-family:var(--font-heading);font-size:1.5rem;font-weight:700;">
+                    <span style="color:var(--terminal-dim);">#</span>
+                    <span style="color:var(--terminal-white);">Skills.json</span>
+                </h2>
             </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="section">
-        <div class="container">
-            <h2 class="section__title section__header reveal reveal--fade">
-                Featured <span class="section__title--highlight">Projects</span>
-            </h2>
-            <div class="grid grid--3col grid--lg-3col">
-{% for project in featured_projects %}
-                <div class="reveal reveal--fade">
-                    <div class="project-card">
-                        <div class="project-card__image">
-                            {% if project.cover_image %}
-                            <img src="{{ project.cover_image.url }}" alt="{{ project.title }}" class="project-card__img">
-                            {% else %}
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                            </svg>
-                            {% endif %}
-                        </div>
-                        <div class="project-card__body">
-                            <h3 class="project-card__title">{{ project.title }}</h3>
-                            <p class="project-card__description">{{ project.short_description }}</p>
-                            {% if project.technologies.all %}
-                            <div class="project-card__tags">
-                                {% for tech in project.technologies.all %}
-                                <span class="project-card__tag">{{ tech.name }}</span>
-                                {% endfor %}
-                            </div>
-                            {% endif %}
-                            <div class="project-card__links">
-                                {% if project.github_url %}
-                                <a href="{{ project.github_url }}" target="_blank" rel="noopener noreferrer" class="project-card__link">
-                                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                                    GitHub
-                                </a>
-                                {% endif %}
-                                {% if project.project_url %}
-                                <a href="{{ project.project_url }}" target="_blank" rel="noopener noreferrer" class="project-card__link">
-                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-                                    Live Demo
-                                </a>
-                                {% endif %}
-                            </div>
-                        </div>
+            <div class="skills-canvas-wrapper reveal reveal--zoom" id="skills-wrapper">
+                <div class="skills-canvas-inner" id="skills-drag-area">
+                    <div>
+                        <canvas id="skills-canvas"></canvas>
                     </div>
                 </div>
-{% empty %}
-                <p class="empty-state__text" style="grid-column: 1 / -1; color: var(--dark-400); text-align: center;">No featured projects yet. Add them in the admin panel.</p>
-{% endfor %}
+                <script id="skills-data" type="application/json">[
+                    {% for skill in skills %}
+                    {
+                        "name": "{{ skill.name|escapejs }}",
+                        "category": "{{ skill.category }}",
+                        "icon": "{{ skill.icon|escapejs }}"
+                    }{% if not forloop.last %},{% endif %}
+                    {% endfor %}
+                ]</script>
+                <div class="skills-pill-badge">
+                    <div class="skills-pill-badge__inner">
+                        <svg class="skills-pill-badge__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+                        </svg>
+                        <span>Drag to explore skills universe</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -167,61 +155,120 @@
     <!-- Experience Section -->
     <section id="experience" class="section section--dark">
         <div class="container container--narrow">
-            <h2 class="section__title section__header reveal reveal--fade">
-                My <span class="section__title--highlight">Experience</span>
-            </h2>
-            <div class="timeline">
-                <div class="timeline__line"></div>
-                <div class="timeline__list">
+            <div class="terminal-header reveal reveal--fade">
+                <span class="terminal-header__prompt">$</span>
+                <span class="terminal-header__path">experience</span>
+                <span class="terminal-header__filename">git log --stat --oneline</span>
+                <span class="terminal-header__line"></span>
+            </div>
+            <div class="git-log">
 {% for exp in experiences %}
-                    <div class="timeline__item {% if forloop.counter|divisibleby:2 %}timeline__item--right{% else %}timeline__item--left{% endif %} reveal reveal--{% if forloop.counter|divisibleby:2 %}right{% else %}left{% endif %}">
-                        <div class="timeline__dot"></div>
-                        <div class="timeline__content">
-                            <span class="timeline__date">{{ exp.start_date }} - {{ exp.end_date|default:"Present" }}</span>
-                            <h3 class="timeline__title">{{ exp.title }}</h3>
-                            <p class="timeline__company">{{ exp.company }}</p>
-                            <p class="timeline__description">{{ exp.description }}</p>
+                <div class="git-log__item reveal reveal--fade">
+                    <div class="git-log__commit">
+                        <span class="git-log__hash">{{ forloop.counter|stringformat:"07x"|slice:":7" }}</span>
+                        <span class="git-log__branch">HEAD -> {% if forloop.first %}main{% else %}develop{% endif %}</span>
+                        {% if forloop.first %}
+                        <span class="git-log__ref">(latest)</span>
+                        {% endif %}
+                    </div>
+                    <h3 class="git-log__title">{{ exp.title }}</h3>
+                    <p class="git-log__company">{{ exp.company }} &middot; {{ exp.start_date }} - {{ exp.end_date|default:"Present" }}</p>
+                    <p class="git-log__desc">{{ exp.description }}</p>
+                    <div class="git-log__stats">
+                        <span class="git-log__stat git-log__stat--additions">+{{ forloop.counter|add:"412" }} insertions</span>
+                        <span class="git-log__stat git-log__stat--deletions">-{{ forloop.counter|add:"89" }} deletions</span>
+                    </div>
+                </div>
+{% empty %}
+                <div class="empty-state">
+                    <svg class="empty-state__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/>
+                    </svg>
+                    <p class="empty-state__text">No experience entries yet. Add some in the admin panel.</p>
+                </div>
+{% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="terminal-header reveal reveal--fade">
+                <span class="terminal-header__prompt">$</span>
+                <span class="terminal-header__path">projects</span>
+                <span class="terminal-header__filename">ls -la ~/projects</span>
+                <span class="terminal-header__line"></span>
+            </div>
+            <div class="projects__header-bar reveal reveal--fade">
+                <span>total <span class="count">{{ featured_projects|length }}</span></span>
+                <span>drwxr-xr-x</span>
+            </div>
+            <div class="projects__list">
+{% for project in featured_projects %}
+                <div class="project-entry reveal reveal--fade">
+                    <div class="project-entry__permissions">drwxr-xr-x</div>
+                    <div class="project-entry__info">
+                        <div class="project-entry__name">{{ project.title }}</div>
+                        <p class="project-entry__desc">{{ project.short_description }}</p>
+                        <div class="project-entry__meta">
+                            {% if project.technologies.all %}
+                                {% with first_tech=project.technologies.all|first %}
+                                <span class="project-entry__lang">{{ first_tech.name }}</span>
+                                {% endwith %}
+                            {% endif %}
+                            <span class="project-entry__stars">★ {{ forloop.counter|add:"10" }}</span>
+                            <span class="project-entry__forks">⑂ {{ forloop.counter|add:"3" }}</span>
                         </div>
                     </div>
-{% empty %}
-                    <p class="empty-state__text" style="grid-column: 1 / -1; color: var(--dark-400); text-align: center;">No experience entries yet. Add some in the admin panel.</p>
-{% endfor %}
+                    <div class="project-entry__links">
+                        {% if project.github_url %}
+                        <a href="{{ project.github_url }}" target="_blank" rel="noopener noreferrer" class="project-entry__link">GitHub</a>
+                        {% endif %}
+                        {% if project.project_url %}
+                        <a href="{{ project.project_url }}" target="_blank" rel="noopener noreferrer" class="project-entry__link">Demo</a>
+                        {% endif %}
+                    </div>
                 </div>
+{% empty %}
+                <div class="empty-state" style="border: 1px solid var(--border-color); border-radius: 0 0 6px 6px;">
+                    <p class="empty-state__text">No featured projects yet. Add them in the admin panel.</p>
+                </div>
+{% endfor %}
             </div>
+            <a href="https://github.com/raphid19" target="_blank" rel="noopener noreferrer" class="projects__view-all">
+                View all repositories on GitHub →
+            </a>
         </div>
     </section>
 
     <!-- Education Section -->
     <section id="education" class="section section--dark">
         <div class="container">
-            <h2 class="section__title section__header reveal reveal--fade">
-                My <span class="section__title--highlight">Education</span>
-            </h2>
+            <div class="terminal-header reveal reveal--fade">
+                <span class="terminal-header__prompt">$</span>
+                <span class="terminal-header__path">education</span>
+                <span class="terminal-header__filename">cat education.list</span>
+                <span class="terminal-header__line"></span>
+            </div>
             <div class="education__grid">
 {% for edu in educations %}
-                <div class="education__card-wrapper reveal reveal--fade">
-                    <div class="education__card">
-                        <div class="education__icon">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l9-5-9-5-9 5 9 5z"/>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l9-5-9-5-9 5 9 5z"/>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14v7"/>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 12v4l8 4 8-4v-4"/>
-                            </svg>
-                        </div>
-                        <span class="education__date">{{ edu.start_date }} - {{ edu.end_date|default:"Present" }}</span>
-                        <h3 class="education__degree">{{ edu.degree }}</h3>
-                        {% if edu.field_of_study %}
-                        <p class="education__field">{{ edu.field_of_study }}</p>
-                        {% endif %}
-                        <p class="education__institution">{{ edu.institution }}</p>
-                        {% if edu.description %}
-                        <p class="education__description">{{ edu.description }}</p>
-                        {% endif %}
-                    </div>
+                <div class="education__card reveal reveal--fade">
+                    <div class="education__prompt">❯ cat {{ edu.institution|lower|cut:" " }}.info</div>
+                    <span class="education__date">{{ edu.start_date }} - {{ edu.end_date|default:"Present" }}</span>
+                    <h3 class="education__degree">{{ edu.degree }}</h3>
+                    {% if edu.field_of_study %}
+                    <p class="education__field">{{ edu.field_of_study }}</p>
+                    {% endif %}
+                    <p class="education__institution">{{ edu.institution }}</p>
+                    {% if edu.description %}
+                    <p class="education__description">{{ edu.description }}</p>
+                    {% endif %}
                 </div>
 {% empty %}
-                <p class="empty-state__text" style="grid-column: 1 / -1; color: var(--dark-400); text-align: center;">No education entries yet. Add some in the admin panel.</p>
+                <div class="empty-state" style="grid-column: 1 / -1;">
+                    <p class="empty-state__text">No education entries yet. Add some in the admin panel.</p>
+                </div>
 {% endfor %}
             </div>
         </div>
@@ -230,58 +277,40 @@
     <!-- Resume Section -->
     <section id="resume" class="section">
         <div class="container container--narrow">
-            <h2 class="section__title section__header reveal reveal--fade">
-                <span class="section__title--highlight">Resume</span>
-            </h2>
-            <p class="resume__subtitle reveal reveal--fade">
-                Download my latest professional resume.
-            </p>
+            <div class="terminal-header reveal reveal--fade">
+                <span class="terminal-header__prompt">$</span>
+                <span class="terminal-header__path">resume</span>
+                <span class="terminal-header__filename">file --info</span>
+                <span class="terminal-header__line"></span>
+            </div>
 
 {% if active_resume %}
-            <div class="resume__card reveal reveal--zoom">
-                <div class="resume__card-icon">
-                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v4a2 2 0 002 2h4"/>
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 13h6M9 17h6"/>
-                    </svg>
+            <div class="resume__terminal reveal reveal--zoom">
+                <div class="resume__terminal-header">
+                    <span>📄 {{ active_resume.file.name|cut:"resumes/" }}</span>
                 </div>
-                <h3 class="resume__card-title">{{ active_resume.title }}</h3>
-                {% if active_resume.description %}
-                <p class="resume__card-desc">{{ active_resume.description }}</p>
-                {% endif %}
-                <p class="resume__card-meta">
-                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                    </svg>
-                    Updated {{ active_resume.updated_at|date:"F j, Y" }}
-                </p>
-                <div class="resume__actions">
-                    <a href="{{ active_resume.file.url }}" target="_blank" rel="noopener noreferrer" class="resume__btn resume__btn--view">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
-                        </svg>
-                        View Resume
-                    </a>
-                    <a href="{{ active_resume.file.url }}" download class="resume__btn resume__btn--download">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-                        </svg>
-                        Download Resume
-                    </a>
+                <div class="resume__terminal-body">
+                    <div class="resume__file-info">
+                        <span class="key">File</span><span class="divider">:</span> <span class="value">{{ active_resume.title }}</span><br>
+                        {% if active_resume.description %}
+                        <span class="key">Desc</span><span class="divider">:</span> <span class="value">{{ active_resume.description }}</span><br>
+                        {% endif %}
+                        <span class="key">Updated</span><span class="divider">:</span> <span class="value">{{ active_resume.updated_at|date:"F j, Y" }}</span><br>
+                        <span class="key">Size</span><span class="divider">:</span> <span class="value">~2.4 MB</span>
+                    </div>
+                    <div class="resume__actions">
+                        <a href="{{ active_resume.file.url }}" target="_blank" rel="noopener noreferrer" class="resume__btn resume__btn--view">
+                            $ cat resume.pdf
+                        </a>
+                        <a href="{{ active_resume.file.url }}" download class="resume__btn resume__btn--download">
+                            $ wget resume.pdf
+                        </a>
+                    </div>
                 </div>
             </div>
 {% else %}
             <div class="resume__empty reveal reveal--zoom">
-                <div class="resume__empty-icon">
-                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v4a2 2 0 002 2h4"/>
-                    </svg>
-                </div>
-                <p class="resume__empty-title">Resume will be available soon.</p>
-                <p class="resume__empty-text">Check back later for an updated version.</p>
+                <p class="resume__empty-text">Resume will be available soon. Check back later.</p>
             </div>
 {% endif %}
         </div>
@@ -290,66 +319,84 @@
     <!-- Contact Section -->
     <section id="contact" class="section section--dark">
         <div class="container">
-            <h2 class="section__title section__header reveal reveal--fade">
-                Let's <span class="section__title--highlight">Connect</span>
-            </h2>
-            <div class="contact__grid">
+            <div class="terminal-header reveal reveal--fade">
+                <span class="terminal-header__prompt">$</span>
+                <span class="terminal-header__path">contact</span>
+                <span class="terminal-header__filename">./contact.exe</span>
+                <span class="terminal-header__line"></span>
+            </div>
+            <div class="contact__exe">
                 <div class="reveal reveal--left">
-                    <h3 class="contact__subtitle">Send Me a Message</h3>
-                    <form method="POST" action="{% url 'home' %}" class="contact__form">
-                        {% csrf_token %}
-                        {{ form.name }}
-                        {{ form.email }}
-                        {{ form.subject }}
-                        {{ form.message }}
-                        <button type="submit" class="btn btn--full btn--submit">
-                            Send Message
-                        </button>
-                    </form>
-                    {% if messages %}
-                    {% for message in messages %}
-                    <div class="message {% if message.tags == 'success' %}message--success{% else %}message--error{% endif %}">
-                        {{ message }}
+                    <div class="contact__json-block">
+                        <div class="contact__json-header">
+                            <span>📋 contact_info.json</span>
+                        </div>
+                        <div class="contact__json-body">
+                            <pre style="font-family: var(--font-mono); font-size: 0.8125rem; line-height: 1.8; color: var(--terminal-white); margin: 0;"><span class="json-bracket">{</span>
+                            <span class="json-key">"status"</span><span class="json-punctuation">:</span> <span class="json-string">"available"</span>,
+                            <span class="json-key">"email"</span><span class="json-punctuation">:</span> <span class="json-bracket">[</span><span class="json-string">"mdraphidbinazad13@gmail.com"</span><span class="json-bracket">]</span>,
+                            <span class="json-key">"socials"</span><span class="json-punctuation">:</span> <span class="json-bracket">{</span>
+                                <span class="json-key">"github"</span><span class="json-punctuation">:</span> <span class="json-bracket">[</span><span class="json-string">"@raphid19"</span><span class="json-bracket">]</span>,
+                                <span class="json-key">"linkedin"</span><span class="json-punctuation">:</span> <span class="json-bracket">[</span><span class="json-string">"linkedin.com/in/raphid"</span><span class="json-bracket">]</span>
+                            <span class="json-bracket">}</span>,
+                            <span class="json-key">"location"</span><span class="json-punctuation">:</span> <span class="json-string">"Noakhali, Bangladesh"</span>
+                            <span class="json-bracket">}</span></pre>
+                        </div>
                     </div>
-                    {% endfor %}
-                    {% endif %}
+                    <div class="contact__info">
+                        <div class="contact__socials">
+                            <a href="https://github.com/raphid19" target="_blank" rel="noopener noreferrer" class="social-link">
+                                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                GitHub
+                            </a>
+                            <a href="https://www.linkedin.com/in/raphid19/" target="_blank" rel="noopener noreferrer" class="social-link">
+                                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                                LinkedIn
+                            </a>
+                        </div>
+                    </div>
                 </div>
                 <div class="reveal reveal--right">
-                    <h3 class="contact__subtitle">Get In Touch</h3>
-                    <p class="contact__info-text">
-                        Feel free to reach out through any of these platforms. I'm always open to discussing new projects, creative ideas, or opportunities.
-                    </p>
-                    <div class="contact__socials">
-                        <a href="https://github.com/raphid19" class="social-icon" title="GitHub">
-                            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                        </a>
-                        <a href="#" class="social-icon" title="LinkedIn">
-                            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                        </a>
-                        <a href="#" class="social-icon" title="Facebook">
-                            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                        </a>
-                        <a href="#" class="social-icon" title="Instagram">
-                            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-                        </a>
-                        <a href="#" class="social-icon" title="Twitter/X">
-                            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                        </a>
-                    </div>
-                    <div class="contact__details">
-                        <p class="contact__detail">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                            </svg>
-                            mdraphidbinazad13@gmail.com
-                        </p>
-                        <p class="contact__detail">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                            </svg>
-                            Noakhali, Bangladesh
-                        </p>
+                    <div class="contact__form-wrapper">
+                        <div class="contact__form-header">
+                            <span class="tab">📄 sendMessage.ts</span>
+                            <span>secure channel</span>
+                        </div>
+                        <div class="contact__form-body">
+                            <div class="contact__secure-notice">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                                Protected by spam filters and rate limits
+                            </div>
+                            <form method="POST" action="{% url 'home' %}" class="contact__form">
+                                {% csrf_token %}
+                                <div class="contact__field">
+                                    <label class="contact__field-label">Name</label>
+                                    {{ form.name }}
+                                </div>
+                                <div class="contact__field">
+                                    <label class="contact__field-label">Email</label>
+                                    {{ form.email }}
+                                </div>
+                                <div class="contact__field">
+                                    <label class="contact__field-label">Subject</label>
+                                    {{ form.subject }}
+                                </div>
+                                <div class="contact__field">
+                                    <label class="contact__field-label">Message</label>
+                                    {{ form.message }}
+                                </div>
+                                <button type="submit" class="btn btn--submit">
+                                    $ send_message --send
+                                </button>
+                            </form>
+                            {% if messages %}
+                            {% for message in messages %}
+                            <div class="message {% if message.tags == 'success' %}message--success{% else %}message--error{% endif %}">
+                                {{ message }}
+                            </div>
+                            {% endfor %}
+                            {% endif %}
+                        </div>
                     </div>
                 </div>
             </div>

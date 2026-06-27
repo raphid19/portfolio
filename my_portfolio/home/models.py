@@ -4,8 +4,15 @@ from imagekit.models import ImageSpecField
 from imagekit.processors import ResizeToFill
 
 class Technology(models.Model):
+    CATEGORY_CHOICES = [
+        ('frontend', 'Frontend'),
+        ('backend', 'Backend'),
+        ('tools', 'Tools'),
+    ]
     name = models.CharField(max_length=100, unique=True)
     slug = models.SlugField(max_length=100, unique=True, blank=True)
+    category = models.CharField(max_length=20, choices=CATEGORY_CHOICES, default='backend')
+    icon = models.CharField(max_length=100, blank=True, help_text="Devicon class name (e.g. devicon-python-plain)")
 
     class Meta:
         ordering = ['name']

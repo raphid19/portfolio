@@ -1,19 +1,26 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Raphid</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     {% load static %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
 </head>
 <body>
 
+    <div class="scanlines"></div>
+
     <!-- Navbar -->
     <nav id="navbar" class="navbar">
-        <div class="navbar__container container">
-            <a href="{% block home_link %}/{% endblock %}" class="navbar__logo">Home</a>
+        <div class="navbar__container">
+            <a href="{% block home_link %}/{% endblock %}" class="navbar__logo">
+                <span class="prompt">~/$</span> <span class="path">portfolio</span>
+            </a>
             <div class="navbar__links">
                 <a href="/#about" class="navbar__link">About</a>
                 <a href="/#skills" class="navbar__link">Skills</a>
@@ -24,21 +31,17 @@
                 <a href="/#resume" class="navbar__link">Resume</a>
                 <a href="/#contact" class="navbar__link">Contact</a>
             </div>
-            <button id="mobile-menu-btn" class="navbar__mobile-btn">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                </svg>
-            </button>
+            <button id="mobile-menu-btn" class="navbar__mobile-btn">[ menu ]</button>
         </div>
         <div id="mobile-menu" class="navbar__mobile-menu">
-            <a href="/#about" class="navbar__mobile-link">About</a>
-            <a href="/#skills" class="navbar__mobile-link">Skills</a>
-            <a href="/#projects" class="navbar__mobile-link">Projects</a>
-            <a href="/#experience" class="navbar__mobile-link">Experience</a>
-            <a href="/#education" class="navbar__mobile-link">Education</a>
-            <a href="/certificates/" class="navbar__mobile-link">Certificates</a>
-            <a href="/#resume" class="navbar__mobile-link">Resume</a>
-            <a href="/#contact" class="navbar__mobile-link">Contact</a>
+            <a href="/#about" class="navbar__mobile-link">&gt; About</a>
+            <a href="/#skills" class="navbar__mobile-link">&gt; Skills</a>
+            <a href="/#projects" class="navbar__mobile-link">&gt; Projects</a>
+            <a href="/#experience" class="navbar__mobile-link">&gt; Experience</a>
+            <a href="/#education" class="navbar__mobile-link">&gt; Education</a>
+            <a href="/certificates/" class="navbar__mobile-link">&gt; Certificates</a>
+            <a href="/#resume" class="navbar__mobile-link">&gt; Resume</a>
+            <a href="/#contact" class="navbar__mobile-link">&gt; Contact</a>
         </div>
     </nav>
 
@@ -46,13 +49,9 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer__container container">
-            <p class="footer__copy">&copy; 2026 Raphid. All rights reserved.</p>
-            <a href="#hero" class="footer__back-to-top" title="Back to top">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
-                </svg>
-            </a>
+        <div class="footer__container">
+            <p class="footer__copy">Built with <span class="heart">&lt;3</span> using Django, Python &amp; vanilla JS &copy; 2026 Raphid</p>
+            <a href="#hero" class="footer__back-to-top">^ back to top</a>
         </div>
     </footer>
 

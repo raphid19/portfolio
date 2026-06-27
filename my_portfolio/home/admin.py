@@ -5,7 +5,8 @@ from .models import Certificate, Education, Experience, Project, Resume, Technol
 
 @admin.register(Technology)
 class TechnologyAdmin(admin.ModelAdmin):
-    list_display = ['name', 'slug']
+    list_display = ['name', 'category', 'slug', 'icon']
+    list_filter = ['category']
     prepopulated_fields = {'slug': ('name',)}
     search_fields = ['name']
 
