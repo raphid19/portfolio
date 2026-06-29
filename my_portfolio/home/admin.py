@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.utils.html import format_html
-from .models import Certificate, Education, Experience, Project, Resume, Technology
+from .models import About, Certificate, Education, Experience, Project, Resume, Technology
 
 
 @admin.register(Technology)
@@ -97,3 +97,27 @@ class ResumeAdmin(admin.ModelAdmin):
             return format_html('<a href="{}" target="_blank">Download</a>', obj.file.url)
         return "-"
     file_link.short_description = 'File'
+
+
+@admin.register(About)
+class AboutAdmin(admin.ModelAdmin):
+    list_display = ['operator_name', 'role', 'status', 'is_active']
+    list_editable = ['is_active']
+    fieldsets = [
+        ('Left Panel - Bio & Mission', {
+            'fields': ['bio', 'mission_prefix', 'focus_areas'],
+        }),
+        ('Left Panel - Stats', {
+            'fields': [
+                ('stat_1_value', 'stat_1_label'),
+                ('stat_2_value', 'stat_2_label'),
+                ('stat_3_value', 'stat_3_label'),
+            ],
+        }),
+        ('Right Panel - Operator Info', {
+            'fields': ['operator_name', 'role', 'location', 'email', 'languages', 'status'],
+        }),
+        ('Settings', {
+            'fields': ['is_active'],
+        }),
+    ]

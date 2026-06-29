@@ -107,6 +107,40 @@ class Education(models.Model):
         return f"{self.degree} at {self.institution}"
 
 
+class About(models.Model):
+    bio = models.TextField(help_text="whoami output (your bio)")
+    mission_prefix = models.TextField(blank=True, help_text="Text before focus areas in mission (e.g. 'Translating complex...')")
+    focus_areas = models.CharField(max_length=500, blank=True, help_text="Comma-separated focus areas (e.g. Web Development, API Design, Cloud Technologies)")
+
+    stat_1_value = models.CharField(max_length=20, default="01+")
+    stat_1_label = models.CharField(max_length=100, default="EXPERIENCE (YRS)")
+    stat_2_value = models.CharField(max_length=20, default="05+")
+    stat_2_label = models.CharField(max_length=100, default="PROJECTS DEP")
+    stat_3_value = models.CharField(max_length=20, default="∞")
+    stat_3_label = models.CharField(max_length=100, default="CAFFEINE ml")
+
+    operator_name = models.CharField(max_length=200)
+    role = models.CharField(max_length=200)
+    location = models.CharField(max_length=200)
+    email = models.EmailField()
+    languages = models.CharField(max_length=200)
+    status = models.CharField(max_length=50, default="ONLINE")
+
+    is_active = models.BooleanField(default=True)
+
+    class Meta:
+        verbose_name = "About"
+        verbose_name_plural = "About Settings"
+
+    def save(self, *args, **kwargs):
+        if self.is_active:
+            About.objects.filter(is_active=True).exclude(pk=self.pk).update(is_active=False)
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return self.operator_name or "About Section"
+
+
 class Resume(models.Model):
     title = models.CharField(max_length=200)
     file = models.FileField(upload_to='resumes/')

@@ -1,4 +1,5 @@
 {% extends 'home/base.html' %}
+{% load home_extras %}
 
 {% block home_link %}#hero{% endblock %}
 
@@ -58,29 +59,27 @@
                         <div class="about__terminal-body">
                             <div class="about__cmd"><span class="prompt">➜</span> whoami</div>
                             <div class="about__output">
-                                I am a Software Engineer with a passion for building scalable, full-stack applications.
-                                My architecture is built on a foundation of clean code, performance optimization,
-                                and continuous learning.
+                                {{ about.bio }}
                             </div>
                             <div class="about__cmd"><span class="prompt">➜</span> cat mission.txt</div>
                             <div class="about__output">
-                                Translating complex business requirements into robust technical solutions.
-                                Currently focused on <span class="label">Web Development</span>,
-                                <span class="label">API Design</span>, and
-                                <span class="label">Cloud Technologies</span>.
+                                {{ about.mission_prefix }}
+                                {% if about.focus_areas %}
+                                    Currently focused on {{ about.focus_areas|format_focus_areas }}
+                                {% endif %}
                             </div>
                             <div class="about__stats">
                                 <div class="about__stat">
-                                    <div class="about__stat-value">01+</div>
-                                    <div class="about__stat-label">EXPERIENCE (YRS)</div>
+                                    <div class="about__stat-value">{{ about.stat_1_value }}</div>
+                                    <div class="about__stat-label">{{ about.stat_1_label }}</div>
                                 </div>
                                 <div class="about__stat">
-                                    <div class="about__stat-value">05+</div>
-                                    <div class="about__stat-label">PROJECTS DEP</div>
+                                    <div class="about__stat-value">{{ about.stat_2_value }}</div>
+                                    <div class="about__stat-label">{{ about.stat_2_label }}</div>
                                 </div>
                                 <div class="about__stat">
-                                    <div class="about__stat-value">∞</div>
-                                    <div class="about__stat-label">CAFFEINE ml</div>
+                                    <div class="about__stat-value">{{ about.stat_3_value }}</div>
+                                    <div class="about__stat-label">{{ about.stat_3_label }}</div>
                                 </div>
                             </div>
                         </div>
@@ -96,12 +95,12 @@
                         </div>
                         <div class="about__terminal-body">
                             <div class="about__output" style="border-left: none; padding-left: 0;">
-                                <span class="dim">OPERATOR</span>        <span class="value">MD RAPHID BIN AZAD</span><br>
-                                <span class="dim">ROLE</span>             <span class="value">FULL_STACK_DEVELOPER</span><br>
-                                <span class="dim">LOCATION</span>         <span class="value">Maijdee, Noakhali, Bangladesh</span><br>
-                                <span class="dim">EMAIL</span>            <span class="value">mdraphidbinazad13@gmail.com</span><br>
-                                <span class="dim">LANGUAGES</span>        <span class="value">Bengali, English</span><br>
-                                <span class="dim">STATUS</span>           <span class="value" style="color: var(--terminal-green);">ONLINE</span>
+                                <span class="dim">OPERATOR</span>        <span class="value">{{ about.operator_name }}</span><br>
+                                <span class="dim">ROLE</span>             <span class="value">{{ about.role }}</span><br>
+                                <span class="dim">LOCATION</span>         <span class="value">{{ about.location }}</span><br>
+                                <span class="dim">EMAIL</span>            <span class="value">{{ about.email }}</span><br>
+                                <span class="dim">LANGUAGES</span>        <span class="value">{{ about.languages }}</span><br>
+                                <span class="dim">STATUS</span>           <span class="value" style="color: var(--terminal-green);">{{ about.status }}</span>
                             </div>
                         </div>
                     </div>

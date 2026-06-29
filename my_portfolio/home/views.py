@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import ContactForm
 from .email_service import send_contact_email
-from .models import Certificate, Education, Experience, Project, Resume, Technology
+from .models import About, Certificate, Education, Experience, Project, Resume, Technology
 
 def home_view(request):
     form = ContactForm()
@@ -11,6 +11,7 @@ def home_view(request):
     educations = Education.objects.all()
     active_resume = Resume.objects.filter(is_active=True).first()
     featured_projects = Project.objects.filter(is_published=True, is_featured=True).prefetch_related('technologies')
+    about = About.objects.filter(is_active=True).first()
 
     if request.method == 'POST':
         form = ContactForm(request.POST)
@@ -33,6 +34,7 @@ def home_view(request):
         'educations': educations,
         'active_resume': active_resume,
         'featured_projects': featured_projects,
+        'about': about,
     })
 
 
