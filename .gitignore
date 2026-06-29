@@ -11,6 +11,8 @@ staticfiles/
 # Environment
 .env
 venv/
+#plan
+plan.txt
 
 # Node
 node_modules/
